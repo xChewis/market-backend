@@ -1,19 +1,19 @@
 package com.tecnm.merida.market.backend.persistence.entity;
-
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 @Entity
-@Table(name = "clientes")
+@Table (name="clientes")
 public class Cliente {
 
     @Id
     private Integer id;
     private String nombre;
-    private String apellidos;
+    private String apellido;
     private String celular;
-    private String direccion;
+    private String  direccion;
 
-    @Column(name = "correo_electronico")
+    @Column (name ="correo_electronico")
     private String correoElectronico;
 
     public Integer getId() {
@@ -32,12 +32,12 @@ public class Cliente {
         this.nombre = nombre;
     }
 
-    public String getApellidos() {
-        return apellidos;
+    public String getApellido() {
+        return apellido;
     }
 
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
     public String getCelular() {

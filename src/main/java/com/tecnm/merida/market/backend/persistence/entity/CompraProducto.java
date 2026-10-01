@@ -1,19 +1,14 @@
 package com.tecnm.merida.market.backend.persistence.entity;
 
-import jakarta.persistence.EmbeddedId;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
-@Table (name = "compras_productos")
-
+@Table (name="compra_producto")
 
 public class CompraProducto {
+    @Embedded
 
-    //Viene de otra clase
-    @EmbeddedId
     private CompraProductoPK id;
-
     private Integer cantidad;
     private Double total;
     private Boolean estado;

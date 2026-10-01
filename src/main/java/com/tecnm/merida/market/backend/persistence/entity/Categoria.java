@@ -3,15 +3,16 @@ package com.tecnm.merida.market.backend.persistence.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "categorias")
+@Table (name= "categorias")
 
 public class Categoria {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column (name = "id_categoria")
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @Column (name ="Categoria")
     private Integer idCategoria;
 
-    private  String descripcion;
+    private String descripcion;
 
     private Boolean estado;
 
