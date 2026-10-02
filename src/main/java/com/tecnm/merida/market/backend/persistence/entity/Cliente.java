@@ -1,19 +1,26 @@
 package com.tecnm.merida.market.backend.persistence.entity;
+
+import com.google.errorprone.annotations.InlineMeValidationDisabled;
 import jakarta.persistence.*;
 
-import java.io.Serializable;
+import java.util.List;
+
 @Entity
-@Table (name="clientes")
+@Table(name = "clientes")
+
 public class Cliente {
 
     @Id
     private Integer id;
     private String nombre;
-    private String apellido;
+    private String apellidos;
     private String celular;
-    private String  direccion;
+    private String direccion;
 
-    @Column (name ="correo_electronico")
+    @OneToMany(mappedBy = "cliente")
+    private List<Compra> compras;
+
+    @Column(name = "correo_electronico")
     private String correoElectronico;
 
     public Integer getId() {
@@ -32,12 +39,12 @@ public class Cliente {
         this.nombre = nombre;
     }
 
-    public String getApellido() {
-        return apellido;
+    public String getApellidos() {
+        return apellidos;
     }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
     }
 
     public String getCelular() {
