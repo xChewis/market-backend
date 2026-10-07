@@ -1,6 +1,5 @@
 package com.tecnm.merida.market.backend.persistence.entity;
 
-import com.google.errorprone.annotations.InlineMeValidationDisabled;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -69,5 +68,13 @@ public class Cliente {
 
     public void setCorreoElectronico(String correoElectronico) {
         this.correoElectronico = correoElectronico;
+    }
+
+    public List<Compra> getCompras() {
+        return compras;
+    }
+
+    public void setCompras(List<Compra> compras) {
+        this.compras = compras;
     }
 }

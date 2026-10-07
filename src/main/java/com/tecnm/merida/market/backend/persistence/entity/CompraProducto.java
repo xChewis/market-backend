@@ -66,4 +66,20 @@ public class CompraProducto {
     public void setFecha(LocalDateTime fecha) {
         this.fecha = fecha;
     }
+
+    public Compra getCompra() {
+        return compra;
+    }
+
+    public void setCompra(Compra compra) {
+        this.compra = compra;
+    }
+
+    public Producto getProducto() {
+        return producto;
+    }
+
+    public void setProducto(Producto producto) {
+        this.producto = producto;
+    }
 }
