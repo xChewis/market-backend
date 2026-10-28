@@ -4,9 +4,9 @@ public class Product {
 
     private Integer productId;
     private String name;
-    private int categoryID;
+    private Integer categoryID;
     private double price;
-    private int stock:
+    private int stock;
     private boolean active;
     private Category category;
 
@@ -26,11 +26,11 @@ public class Product {
         this.name = name;
     }
 
-    public int getCategoryID() {
+    public Integer getCategoryID() {
         return categoryID;
     }
 
-    public void setCategoryID(int categoryID) {
+    public void setCategoryID(Integer categoryID) {
         this.categoryID = categoryID;
     }
 

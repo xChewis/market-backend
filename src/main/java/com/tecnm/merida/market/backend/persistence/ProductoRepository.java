@@ -20,6 +20,6 @@ public class ProductoRepository {
         return productoCrudRepository.findByIdCategoriaOrderByNombreAsc(idCategoria);
     }
     public Optional <List<Producto>>getEscasos(int cantidad) {
-        return productoCrudRepository.findByCantidadStockLessThenAndEstado(cantidad, true);
+        return productoCrudRepository.findByCantidadStockLessThanAndEstado(cantidad, true);
     }
 }
