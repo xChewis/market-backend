@@ -34,7 +34,7 @@ public class Producto {
     private Categoria categoria;
 
     //Ojito
-    @OneToMany(mappedBy = "id_producto")
+    @OneToMany(mappedBy = "producto")
     private List<CompraProducto> compraProductos;
 
     public Integer getIdProducto() {
