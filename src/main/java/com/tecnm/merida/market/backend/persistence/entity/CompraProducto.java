@@ -2,8 +2,6 @@ package com.tecnm.merida.market.backend.persistence.entity;
 
 import jakarta.persistence.*;
 
-import java.time.LocalDateTime;
-
 @Entity
 @Table(name = "compras_productos")
 
@@ -13,20 +11,18 @@ public class CompraProducto {
     @EmbeddedId
     private CompraProductoPK id;
 
-    private Integer Cantidad;
+    private Integer cantidad;
     private Double total;
     private Boolean estado;
 
     @ManyToOne
     @MapsId("idCompra")
-    @JoinColumn(name = "id_compra", insertable = false, updatable = false)
+    @JoinColumn(name = "id_compra")
     private Compra compra;
 
     @ManyToOne
     @JoinColumn(name = "id_producto", insertable = false, updatable = false)
     private Producto producto;
-
-    private LocalDateTime fecha;
 
     public CompraProductoPK getId() {
         return id;
@@ -37,11 +33,11 @@ public class CompraProducto {
     }
 
     public Integer getCantidad() {
-        return Cantidad;
+        return cantidad;
     }
 
     public void setCantidad(Integer cantidad) {
-        Cantidad = cantidad;
+        this.cantidad = cantidad;
     }
 
     public Double getTotal() {
@@ -58,14 +54,6 @@ public class CompraProducto {
 
     public void setEstado(Boolean estado) {
         this.estado = estado;
-    }
-
-    public LocalDateTime getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(LocalDateTime fecha) {
-        this.fecha = fecha;
     }
 
     public Compra getCompra() {

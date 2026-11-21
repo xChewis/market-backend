@@ -12,8 +12,7 @@ public class Compra {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
-    @Column (name= "Compra")
+    @Column (name= "id_compra")
     private Integer idCompra;
 
     @Column (name="id_cliente")
@@ -24,7 +23,7 @@ public class Compra {
     @Column (name="medio_pago")
     private String medioPago;
 
-    private String Comentario;
+    private String comentario;
     private String estado;
 
     //relacion con el cliente
@@ -34,8 +33,9 @@ public class Compra {
     @JoinColumn (name= "id_cliente",insertable = false, updatable = false)
     private Cliente cliente;
 
-    //relacion con compraproducto
-    @OneToMany (mappedBy = "compra", cascade = CascadeType.ALL )
+    //relacion con compraproducto (maestro-detalle)
+    //CascadeType.ALL: al guardar/borrar la compra se guardan/borran sus productos
+    @OneToMany (mappedBy = "compra", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<CompraProducto> productos;
 
     public Integer getIdCompra() {
@@ -71,11 +71,11 @@ public class Compra {
     }
 
     public String getComentario() {
-        return Comentario;
+        return comentario;
     }
 
     public void setComentario(String comentario) {
-        Comentario = comentario;
+        this.comentario = comentario;
     }
 
     public String getEstado() {

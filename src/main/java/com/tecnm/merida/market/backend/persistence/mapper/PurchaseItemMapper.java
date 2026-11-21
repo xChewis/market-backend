@@ -1,16 +1,13 @@
 package com.tecnm.merida.market.backend.persistence.mapper;
 
-
-import com.tecnm.merida.market.backend.domain.Product;
 import com.tecnm.merida.market.backend.domain.PurchaseItem;
-import com.tecnm.merida.market.backend.persistence.entity.Compra;
 import com.tecnm.merida.market.backend.persistence.entity.CompraProducto;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 
-@Mapper (componentModel = "spring", uses = {ProductMapper.class})
+@Mapper (componentModel = "spring")
 public interface PurchaseItemMapper {
 
     @Mappings({

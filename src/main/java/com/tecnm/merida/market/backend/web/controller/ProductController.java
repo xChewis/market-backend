@@ -52,6 +52,7 @@ public class ProductController {
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
+    @GetMapping("/category/{categoryId}")
     @Operation(summary = "Get products by category",
             description = "Return all products in a specific category")
     @ApiResponse(responseCode = "200",
@@ -63,19 +64,55 @@ public class ProductController {
     public ResponseEntity<List<Product>> getByCategory(
             @Parameter(description = "Category ID",
                     example = "7", required = true)
-            int categoryId){
+            @PathVariable("categoryId") int categoryId){
         return productService.getByCategory(categoryId)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
 
     @PostMapping("")
+    @Operation(summary = "Create a product",
+            description = "Save a new product and return it with its generated ID")
+    @ApiResponse(responseCode = "201",
+            description = "Product created")
+    @ApiResponse(responseCode = "500",
+            description = "Internal Server Error")
     public ResponseEntity<Product> save(@RequestBody Product product) {
         return new ResponseEntity<>(productService.save(product), HttpStatus.CREATED);
     }
 
+    @PutMapping("/{id}")
+    @Operation(summary = "Update a product",
+            description = "Replace the data of an existing product")
+    @ApiResponse(responseCode = "200",
+            description = "Product updated")
+    @ApiResponse(responseCode = "404",
+            description = "Product not found")
+    @ApiResponse(responseCode = "500",
+            description = "Internal Server Error")
+    public ResponseEntity<Product> update(
+            @Parameter(description = "ID of the product to be updated",
+                    example = "7",
+                    required = true)
+            @PathVariable("id") int productId,
+            @RequestBody Product product) {
+        return productService.update(productId, product)
+                .map(ResponseEntity::ok)
+                .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    }
+
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> delete(@PathVariable("id") int productId) {
+    @Operation(summary = "Delete a product",
+            description = "Delete a product by its ID if it exists")
+    @ApiResponse(responseCode = "200",
+            description = "Product deleted")
+    @ApiResponse(responseCode = "404",
+            description = "Product not found")
+    public ResponseEntity<Void> delete(
+            @Parameter(description = "ID of the product to be deleted",
+                    example = "7",
+                    required = true)
+            @PathVariable("id") int productId) {
         if (productService.delete(productId)) {
             return new ResponseEntity<>(HttpStatus.OK);
         } else {
