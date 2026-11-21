@@ -1,4 +1,3 @@
-
 package com.tecnm.merida.market.backend.persistence.mapper;
 
 import com.tecnm.merida.market.backend.domain.Purchase;
@@ -11,7 +10,7 @@ import org.mapstruct.Mappings;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = {PurchaseItemMapper.class})
 public interface PurchaseMapper {
 
     @Mappings({

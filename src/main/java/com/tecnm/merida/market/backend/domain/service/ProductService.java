@@ -11,6 +11,7 @@ import java.util.Optional;
 @Service
 public class ProductService {
 
+    @Autowired
     private ProductRepository productRepository;
 
     public List<Product> getAll () {
@@ -29,12 +30,20 @@ public class ProductService {
         return productRepository.save(product);
     }
 
+    public Optional<Product> update(int productId, Product product) {
+        //Solo se actualiza si el producto existe
+        return getProduct(productId).map(existing -> {
+            product.setProductId(productId);
+            return productRepository.save(product);
+        });
+    }
+
     public boolean delete(int productId) {
         //Verificar que existe antes de borrar
         if(getProduct(productId).isPresent()) {
             productRepository.delete(productId);
             return true;
-        }{
+        } else {
             return false;
         }
     }
