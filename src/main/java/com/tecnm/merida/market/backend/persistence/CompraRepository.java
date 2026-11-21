@@ -1,7 +1,7 @@
 package com.tecnm.merida.market.backend.persistence;
 
 import com.tecnm.merida.market.backend.domain.Purchase;
-import com.tecnm.merida.market.backend.domain.repositoy.PurchaseRepository;
+import com.tecnm.merida.market.backend.domain.repository.PurchaseRepository;
 import com.tecnm.merida.market.backend.persistence.crud.CompraCrudRepository;
 import com.tecnm.merida.market.backend.persistence.entity.Compra;
 import com.tecnm.merida.market.backend.persistence.mapper.PurchaseMapper;
@@ -41,7 +41,9 @@ public class CompraRepository implements PurchaseRepository {
         //Cabecera (maestro) -> entidad Compra, con su lista de CompraProducto (detalle)
         Compra compra = mapper.toCompra(purchase);
         //Cada detalle debe conocer a su compra para que @MapsId tome el ID autogenerado
-        compra.getProductos().forEach(producto -> producto.setCompra(compra));
+        if (compra.getProductos() != null) {
+            compra.getProductos().forEach(producto -> producto.setCompra(compra));
+        }
         //Un solo save: gracias a CascadeType.ALL Hibernate inserta la compra y luego sus productos
         return mapper.toPurchase(compraCrudRepository.save(compra));
     }

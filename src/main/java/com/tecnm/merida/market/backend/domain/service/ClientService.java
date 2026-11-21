@@ -1,7 +1,7 @@
 package com.tecnm.merida.market.backend.domain.service;
 
 import com.tecnm.merida.market.backend.domain.Client;
-import com.tecnm.merida.market.backend.domain.repositoy.ClientRepository;
+import com.tecnm.merida.market.backend.domain.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

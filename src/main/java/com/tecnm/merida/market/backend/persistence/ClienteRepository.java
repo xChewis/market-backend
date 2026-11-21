@@ -1,7 +1,7 @@
 package com.tecnm.merida.market.backend.persistence;
 
 import com.tecnm.merida.market.backend.domain.Client;
-import com.tecnm.merida.market.backend.domain.repositoy.ClientRepository;
+import com.tecnm.merida.market.backend.domain.repository.ClientRepository;
 import com.tecnm.merida.market.backend.persistence.crud.ClienteCrudRepository;
 import com.tecnm.merida.market.backend.persistence.entity.Cliente;
 import com.tecnm.merida.market.backend.persistence.mapper.ClientMapper;

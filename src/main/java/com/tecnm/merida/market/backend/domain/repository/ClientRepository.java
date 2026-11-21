@@ -1,4 +1,4 @@
-package com.tecnm.merida.market.backend.domain.repositoy;
+package com.tecnm.merida.market.backend.domain.repository;
 
 import com.tecnm.merida.market.backend.domain.Client;
 

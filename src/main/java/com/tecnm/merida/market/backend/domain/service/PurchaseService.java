@@ -3,7 +3,7 @@ package com.tecnm.merida.market.backend.domain.service;
 import com.tecnm.merida.market.backend.domain.Purchase;
 import com.tecnm.merida.market.backend.domain.dto.PurchaseRequestDTO;
 import com.tecnm.merida.market.backend.domain.dto.PurchaseUpdateDTO;
-import com.tecnm.merida.market.backend.domain.repositoy.PurchaseRepository;
+import com.tecnm.merida.market.backend.domain.repository.PurchaseRepository;
 import com.tecnm.merida.market.backend.persistence.mapper.PurchaseRequestMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

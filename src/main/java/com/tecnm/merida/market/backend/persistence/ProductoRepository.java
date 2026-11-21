@@ -1,7 +1,7 @@
 package com.tecnm.merida.market.backend.persistence;
 
 import com.tecnm.merida.market.backend.domain.Product;
-import com.tecnm.merida.market.backend.domain.repositoy.ProductRepository;
+import com.tecnm.merida.market.backend.domain.repository.ProductRepository;
 import com.tecnm.merida.market.backend.persistence.crud.ProductoCrudRepository;
 import com.tecnm.merida.market.backend.persistence.entity.Producto;
 import com.tecnm.merida.market.backend.persistence.mapper.ProductMapper;
@@ -35,7 +35,7 @@ public class ProductoRepository implements ProductRepository {
     }
 
     @Override
-    public Optional<List<Product>> getScareProducts(int quantity) {
+    public Optional<List<Product>> getScarceProducts(int quantity) {
         return productoCrudRepository.findByCantidadStockLessThanAndEstado(quantity, true)
                 .map(mapper::toProducts);
     }

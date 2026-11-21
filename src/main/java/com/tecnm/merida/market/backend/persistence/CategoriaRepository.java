@@ -1,7 +1,7 @@
 package com.tecnm.merida.market.backend.persistence;
 
 import com.tecnm.merida.market.backend.domain.Category;
-import com.tecnm.merida.market.backend.domain.repositoy.CategoryRepository;
+import com.tecnm.merida.market.backend.domain.repository.CategoryRepository;
 import com.tecnm.merida.market.backend.persistence.crud.CategoriaCrudRepository;
 import com.tecnm.merida.market.backend.persistence.entity.Categoria;
 import com.tecnm.merida.market.backend.persistence.mapper.CategoryMapper;

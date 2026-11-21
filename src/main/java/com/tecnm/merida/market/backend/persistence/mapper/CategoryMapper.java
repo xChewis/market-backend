@@ -13,15 +13,15 @@ import java.util.List;
 public interface CategoryMapper {
 
     @Mappings({
-            @Mapping(source =  "idCategoria", target = "categoryId"),
-            @Mapping(source =  "descripcion", target = "category"),
-            @Mapping(source =  "estado", target = "active"),
+            @Mapping(source = "idCategoria", target = "categoryId"),
+            @Mapping(source = "description", target = "category"),
+            @Mapping(source = "estado", target = "active"),
     })
     Category toCategory(Categoria categoria);
 
     List<Category> toCategories(List<Categoria> categorias);
 
     @InheritInverseConfiguration
-    @Mapping(target = "productos", ignore = true)
-    Categoria toCategoria (Category category);
+    @Mapping(target = "produstos", ignore = true)
+    Categoria toCategoria(Category category);
 }
