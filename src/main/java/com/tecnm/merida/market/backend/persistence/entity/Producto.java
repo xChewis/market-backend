@@ -33,9 +33,8 @@ public class Producto {
     @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
     private Categoria categoria;
 
-    //Ojito
     @OneToMany(mappedBy = "producto")
-    private List<CompraProducto> compraProductos;
+    private List<CompraProducto> compraProdcutos;
 
     public Integer getIdProducto() {
         return idProducto;
@@ -53,12 +52,12 @@ public class Producto {
         this.nombre = nombre;
     }
 
-    public Integer getidCategoria() {
+    public Integer getId_categoria() {
         return idCategoria;
     }
 
-    public void setidCategoria(Integer idCategoria) {
-        this.idCategoria = idCategoria;
+    public void setId_categoria(Integer id_categoria) {
+        this.idCategoria = id_categoria;
     }
 
     public String getCodigoBarras() {
@@ -101,11 +100,19 @@ public class Producto {
         this.categoria = categoria;
     }
 
-    public List<CompraProducto> getCompraProductos() {
-        return compraProductos;
+    public List<CompraProducto> getCompraProdcutos() {
+        return compraProdcutos;
     }
 
-    public void setCompraProductos(List<CompraProducto> compraProductos) {
-        this.compraProductos = compraProductos;
+    public void setCompraProdcutos(List<CompraProducto> compraProdcutos) {
+        this.compraProdcutos = compraProdcutos;
+    }
+
+    public Integer getIdCategoria() {
+        return idCategoria;
+    }
+
+    public void setIdCategoria(Integer idCategoria) {
+        this.idCategoria = idCategoria;
     }
 }

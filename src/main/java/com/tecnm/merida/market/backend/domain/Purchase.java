@@ -1,16 +1,31 @@
 package com.tecnm.merida.market.backend.domain;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+
 import java.time.LocalDateTime;
 import java.util.List;
 
 public class Purchase {
 
+    @JsonAlias("idCompra")
     private Integer purchaseId;
+
+    @JsonAlias("idCliente")
     private String clientId;
+
+    @JsonAlias("fecha")
     private LocalDateTime date;
+
+    @JsonAlias("medioPago")
     private String paymentMethod;
+
+    @JsonAlias("comentario")
     private String comment;
+
+    @JsonAlias("estado")
     private String state;
+
+    @JsonAlias("productosAdquiridos")
     private List<PurchaseItem> items;
 
     public Integer getPurchaseId() {

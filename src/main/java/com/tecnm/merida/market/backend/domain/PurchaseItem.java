@@ -1,10 +1,18 @@
 package com.tecnm.merida.market.backend.domain;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+
 public class PurchaseItem {
 
+    @JsonAlias("idProducto")
     private int productId;
+
+    @JsonAlias("cantidad")
     private int quantity;
+
     private double total;
+
+    @JsonAlias("estado")
     private boolean active;
 
     public int getProductId() {
@@ -38,4 +46,5 @@ public class PurchaseItem {
     public void setActive(boolean active) {
         this.active = active;
     }
+
 }

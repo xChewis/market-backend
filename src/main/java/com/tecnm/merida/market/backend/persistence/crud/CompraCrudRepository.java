@@ -2,12 +2,10 @@ package com.tecnm.merida.market.backend.persistence.crud;
 
 import com.tecnm.merida.market.backend.persistence.entity.Compra;
 import org.springframework.data.repository.CrudRepository;
-
 import java.util.List;
 import java.util.Optional;
 
-public interface CompraCrudRepository extends CrudRepository<Compra, Integer> {
-
-    Optional<List<Compra>> findByIdCliente(String  idCliente);
+public interface CompraCrudRepository extends CrudRepository<Compra, Integer>{
+    Optional<List<Compra>> findByIdCliente(String idCliente);
 
 }

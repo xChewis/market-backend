@@ -1,7 +1,6 @@
 package com.tecnm.merida.market.backend.domain;
 
 public class Category {
-
     private Integer categoryId;
     private String category;
     private boolean active;
