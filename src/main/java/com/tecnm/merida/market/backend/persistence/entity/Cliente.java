@@ -23,6 +23,9 @@ public class Cliente {
     @Column(name = "correo_electronico")
     private String correoElectronico;
 
+    @Column(name = "password")
+    private String password;
+
     public String getId() {
         return id;
     }
@@ -69,6 +72,14 @@ public class Cliente {
 
     public void setCorreoElectronico(String correoElectronico) {
         this.correoElectronico = correoElectronico;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public List<Compra> getCompras() {
